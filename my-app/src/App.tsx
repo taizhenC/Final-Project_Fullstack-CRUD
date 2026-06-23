@@ -1,3 +1,11 @@
+import { Button } from '@/components/ui/button'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 import './App.css'
 
 function App() {
@@ -7,42 +15,64 @@ function App() {
         <h1>Campuses & Students</h1>
 
         <div className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#campuses">Campuses</a>
-          <a href="#students">Students</a>
+          <Button asChild variant="ghost">
+            <a href="#home">Home</a>
+          </Button>
+          <Button asChild variant="ghost">
+            <a href="#campuses">Campuses</a>
+          </Button>
+          <Button asChild variant="ghost">
+            <a href="#students">Students</a>
+          </Button>
         </div>
       </nav>
 
       <main className="app">
-        <section id="home" className="hero">
-          <p className="eyebrow">Fullstack CRUD Project</p>
-          <h2>Manage campuses and students in one place.</h2>
-          <p>
-            View campuses, track enrolled students, and manage student records
-            through a clean web interface.
-          </p>
+        <section id="home">
+          <Card className="hero-card">
+            <CardHeader>
+              <CardDescription>Fullstack CRUD Project</CardDescription>
+              <CardTitle>Manage campuses and students in one place.</CardTitle>
+            </CardHeader>
+
+            <CardContent>
+              <p>
+                View campuses, track enrolled students, and manage student
+                records through a clean web interface.
+              </p>
+
+              <div className="hero-actions">
+                <Button asChild>
+                  <a href="#campuses">View Campuses</a>
+                </Button>
+                <Button asChild variant="outline">
+                  <a href="#students">View Students</a>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </section>
 
-        <section id="campuses" className="section">
-          <div className="section-heading">
-            <p className="eyebrow">Campuses</p>
-            <h2>Campus directory</h2>
-          </div>
+        <section id="campuses" className="section-grid">
+          <Card>
+            <CardHeader>
+              <CardDescription>Campuses</CardDescription>
+              <CardTitle>Campus directory</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Campus cards will be added here next.</p>
+            </CardContent>
+          </Card>
 
-          <p className="placeholder-text">
-            Campus cards will be added here next.
-          </p>
-        </section>
-
-        <section id="students" className="section">
-          <div className="section-heading">
-            <p className="eyebrow">Students</p>
-            <h2>Student directory</h2>
-          </div>
-
-          <p className="placeholder-text">
-            Student cards will be added here next.
-          </p>
+          <Card>
+            <CardHeader>
+              <CardDescription>Students</CardDescription>
+              <CardTitle>Student directory</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Student cards will be added here next.</p>
+            </CardContent>
+          </Card>
         </section>
       </main>
     </>
