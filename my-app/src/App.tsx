@@ -4,6 +4,7 @@ import CampusesPage from '@/pages/CampusesPage'
 import StudentsPage from '@/pages/StudentsPage'
 import NotFoundPage from '@/pages/NotFoundPage'
 import CampusDetailPage from '@/pages/CampusDetailPage'
+import StudentDetailPage from '@/pages/StudentDetailPage'
 import './App.css'
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/campuses" element={<CampusesPage />} />
           <Route path="/campuses/:id" element={<CampusDetailPage />} />
           <Route path="/students" element={<StudentsPage />} />
+          <Route path="/students/:id" element={<StudentDetailPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main >
