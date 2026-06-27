@@ -21,6 +21,7 @@ function StudentsPage() {
                             email={student.email}
                             gpa={student.gpa}
                             campusName={campus?.name}
+                            id={student.id}
                         />
                     )
                 })}
