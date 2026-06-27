@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+import { Button } from '@/components/ui/button'
 import {
     Card,
     CardContent,
@@ -7,6 +9,7 @@ import {
 } from '@/components/ui/card'
 
 type CampusCardProps = {
+    id: number
     name: string
     address: string
     imageUrl: string
@@ -14,6 +17,7 @@ type CampusCardProps = {
 }
 
 function CampusCard({
+    id,
     name,
     address,
     imageUrl,
@@ -30,6 +34,9 @@ function CampusCard({
 
             <CardContent>
                 <p>{description}</p>
+                <Button asChild variant="outline">
+                    <Link to={`/campuses/${id}`}>View Details</Link>
+                </Button>
             </CardContent>
         </Card>
     )

@@ -17,6 +17,7 @@ function CampusesPage() {
                         address={campus.address}
                         imageUrl={campus.imageUrl}
                         description={campus.description}
+                        id={campus.id}
                     />
                 ))}
             </div>
