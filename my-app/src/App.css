@@ -193,3 +193,53 @@ body {
 .student-card {
   min-height: 180px;
 }
+
+.page-actions {
+  margin-bottom: 24px;
+}
+
+.form-card {
+  max-width: 720px;
+  margin-top: 24px;
+}
+
+.app-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.app-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.app-form input,
+.app-form textarea {
+  width: 100%;
+  border: 1px solid rgba(15, 118, 110, 0.24);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font: inherit;
+  background: white;
+}
+
+.app-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.app-form input:focus,
+.app-form textarea:focus {
+  outline: 2px solid rgba(20, 184, 166, 0.32);
+  border-color: #0f766e;
+}
+
+.error-message {
+  margin: 0;
+  color: #dc2626;
+  font-weight: 600;
+}
