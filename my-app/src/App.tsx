@@ -6,6 +6,7 @@ import NotFoundPage from '@/pages/NotFoundPage'
 import CampusDetailPage from '@/pages/CampusDetailPage'
 import StudentDetailPage from '@/pages/StudentDetailPage'
 import AddCampusPage from '@/pages/AddCampusPage'
+import AddStudentPage from '@/pages/AddStudentPage'
 import './App.css'
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/campuses/new" element={<AddCampusPage />} />
           <Route path="/students" element={<StudentsPage />} />
           <Route path="/students/:id" element={<StudentDetailPage />} />
+          <Route path="/students/new" element={<AddStudentPage />} />
           <Route path="*" element={<NotFoundPage />} />
           
         </Routes>

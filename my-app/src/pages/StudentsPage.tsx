@@ -1,5 +1,7 @@
 import StudentCard from '@/components/StudentCard'
 import { campuses, students } from '@/data/mockData'
+import { Link } from 'react-router-dom'
+import { Button } from '@/components/ui/button'
 
 function StudentsPage() {
     return (
@@ -7,6 +9,12 @@ function StudentsPage() {
             <div className="section-heading">
                 <p>Students</p>
                 <h2>Student directory</h2>
+            </div>
+
+            <div className="page-actions">
+                <Button asChild>
+                    <Link to="/students/new">Add Student</Link>
+                </Button>
             </div>
 
             <div className="card-grid">
