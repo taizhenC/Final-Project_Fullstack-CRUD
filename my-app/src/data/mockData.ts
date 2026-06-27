@@ -1,38 +1,39 @@
+import hunterImage from '@/assets/campuses/hunter.jpg'
+import brooklynImage from '@/assets/campuses/brooklyn.jpg'
+import queensImage from '@/assets/campuses/queens.jpg'
+
 export const campuses = [
   {
     id: 1,
     name: 'Hunter College',
     address: '695 Park Ave, New York, NY',
-    imageUrl:
-      'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=80',
+    imageUrl: hunterImage,
     description:
-      'A public college in Manhattan with a strong computer science program.',
+      'Hunter College is a public university in New York City, United States. It is one of the constituent colleges of the City University of New York, and offers studies in more than one hundred undergraduate and postgraduate fields across five schools.',
   },
   {
     id: 2,
     name: 'Brooklyn College',
     address: '2900 Bedford Ave, Brooklyn, NY',
-    imageUrl:
-      'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=900&q=80',
+    imageUrl: brooklynImage,
     description:
-      'A campus known for its open quad, academic programs, and student community.',
+      'Brooklyn College is a public university in Brooklyn in New York City, New York. It is part of the City University of New York system and enrolled nearly 14,000 students on a 35-acre campus in the Midwood and Flatbush sections of Brooklyn as of fall 2023.',
   },
   {
     id: 3,
     name: 'Queens College',
     address: '65-30 Kissena Blvd, Queens, NY',
-    imageUrl:
-      'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80',
+    imageUrl: queensImage,
     description:
-      'A large campus with a diverse student body and many academic departments.',
+      'Queens College is a public college in the New York City borough of Queens. Part of the City University of New York system, Queens College occupies an 83-acre campus primarily located in Flushing.',
   },
 ]
 
 export const students = [
   {
     id: 1,
-    firstName: 'Mina',
-    lastName: 'Chen',
+    firstName: '',
+    lastName: '',
     email: 'mina.chen@example.com',
     gpa: 3.7,
     campusId: 1,

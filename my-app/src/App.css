@@ -154,8 +154,10 @@ body {
 .campus-card-image {
   width: 100%;
   height: 190px;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  padding: 36px;
+  background: white;
 }
 
 .campus-card p,
