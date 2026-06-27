@@ -6,6 +6,10 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+
+import CampusCard from '@/components/CampusCard'
+import StudentCard from '@/components/StudentCard'
+import { campuses, students } from '@/data/mockData'
 import './App.css'
 
 function App() {
@@ -53,26 +57,47 @@ function App() {
           </Card>
         </section>
 
-        <section id="campuses" className="section-grid">
-          <Card>
-            <CardHeader>
-              <CardDescription>Campuses</CardDescription>
-              <CardTitle>Campus directory</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>Campus cards will be added here next.</p>
-            </CardContent>
-          </Card>
+        <section id="campuses" className="content-section">
+          <div className="section-heading">
+            <p>Campuses</p>
+            <h2>Campus directory</h2>
+          </div>
 
-          <Card>
-            <CardHeader>
-              <CardDescription>Students</CardDescription>
-              <CardTitle>Student directory</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>Student cards will be added here next.</p>
-            </CardContent>
-          </Card>
+          <div className="card-grid">
+            {campuses.map((campus) => (
+              <CampusCard
+                key={campus.id}
+                name={campus.name}
+                address={campus.address}
+                imageUrl={campus.imageUrl}
+                description={campus.description}
+              />
+            ))}
+          </div>
+        </section>
+
+        <section id="students" className="content-section">
+          <div className="section-heading">
+            <p>Students</p>
+            <h2>Student directory</h2>
+          </div>
+
+          <div className="card-grid">
+            {students.map((student) => {
+              const campus = campuses.find((campus) => campus.id === student.campusId)
+
+              return (
+                <StudentCard
+                  key={student.id}
+                  firstName={student.firstName}
+                  lastName={student.lastName}
+                  email={student.email}
+                  gpa={student.gpa}
+                  campusName={campus?.name}
+                />
+              )
+            })}
+          </div>
         </section>
       </main>
     </>
