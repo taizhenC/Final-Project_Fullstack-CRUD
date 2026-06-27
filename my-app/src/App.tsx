@@ -3,6 +3,7 @@ import HomePage from '@/pages/HomePage'
 import CampusesPage from '@/pages/CampusesPage'
 import StudentsPage from '@/pages/StudentsPage'
 import NotFoundPage from '@/pages/NotFoundPage'
+import CampusDetailPage from '@/pages/CampusDetailPage'
 import './App.css'
 
 function App() {
@@ -19,12 +20,13 @@ function App() {
       </nav>
 
       <main className="app">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/campuses" element={<CampusesPage />} />
-            <Route path="/students" element={<StudentsPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/campuses" element={<CampusesPage />} />
+          <Route path="/campuses/:id" element={<CampusDetailPage />} />
+          <Route path="/students" element={<StudentsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
       </main >
     </>
   )
