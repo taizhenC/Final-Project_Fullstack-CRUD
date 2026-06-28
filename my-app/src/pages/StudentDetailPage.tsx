@@ -16,6 +16,10 @@ function StudentDetailPage() {
 
     const student = students.find((student) => student.id === studentId)
 
+    const [selectedCampusId, setSelectedCampusId] = useState(
+        student?.campusId?.toString() ?? '',
+    )
+
     if (!student) {
         return (
             <div className="content-section">
@@ -32,10 +36,6 @@ function StudentDetailPage() {
     }
 
     const campus = campuses.find((campus) => campus.id === student.campusId)
-
-    const [selectedCampusId, setSelectedCampusId] = useState(
-        student.campusId?.toString() ?? '',
-    )
 
     return (
         <div className="content-section">
