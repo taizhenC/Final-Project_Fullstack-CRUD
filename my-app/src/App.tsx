@@ -16,7 +16,9 @@ function App() {
         <h1>Campuses & Students</h1>
 
         <div className="nav-links">
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/" end>
+            Home
+          </NavLink>
           <NavLink to="/campuses">Campuses</NavLink>
           <NavLink to="/students">Students</NavLink>
         </div>
@@ -32,7 +34,7 @@ function App() {
           <Route path="/students/:id" element={<StudentDetailPage />} />
           <Route path="/students/new" element={<AddStudentPage />} />
           <Route path="*" element={<NotFoundPage />} />
-          
+
         </Routes>
       </main >
     </>

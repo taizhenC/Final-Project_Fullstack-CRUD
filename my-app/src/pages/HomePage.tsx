@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { Link } from 'react-router-dom'
 import {
     Card,
     CardContent,
@@ -26,10 +27,10 @@ function HomePage() {
 
                     <div className="hero-actions">
                         <Button asChild>
-                            <a href="/campuses">View Campuses</a>
+                            <Link to="/campuses">View Campuses</Link>
                         </Button>
                         <Button asChild variant="outline">
-                            <a href="/students">View Students</a>
+                            <Link to="/students">View Students</Link>
                         </Button>
                     </div>
                 </CardContent>

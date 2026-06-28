@@ -32,8 +32,8 @@ export const campuses = [
 export const students = [
   {
     id: 1,
-    firstName: '',
-    lastName: '',
+    firstName: 'Mina',
+    lastName: 'Chen',
     email: 'mina.chen@example.com',
     gpa: 3.7,
     campusId: 1,
