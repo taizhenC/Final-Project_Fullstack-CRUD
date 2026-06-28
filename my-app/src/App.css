@@ -249,3 +249,16 @@ body {
 .detail-action-button {
   margin-left: 12px;
 }
+
+.student-action-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-action-card .student-card {
+  flex: 1;
+}
+
+.unenroll-button {
+  width: 100%;
+}
