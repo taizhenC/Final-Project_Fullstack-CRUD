@@ -8,6 +8,7 @@ import StudentDetailPage from '@/pages/StudentDetailPage'
 import AddCampusPage from '@/pages/AddCampusPage'
 import AddStudentPage from '@/pages/AddStudentPage'
 import EditCampusPage from '@/pages/EditCampusPage'
+import EditStudentPage from '@/pages/EditStudentPage'
 import './App.css'
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/students" element={<StudentsPage />} />
           <Route path="/students/:id" element={<StudentDetailPage />} />
           <Route path="/students/new" element={<AddStudentPage />} />
+          <Route path="/students/:id/edit" element={<EditStudentPage />} />
           <Route path="*" element={<NotFoundPage />} />
 
         </Routes>
