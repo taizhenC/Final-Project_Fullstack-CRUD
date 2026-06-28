@@ -245,3 +245,7 @@ body {
   color: #dc2626;
   font-weight: 600;
 }
+
+.detail-action-button {
+  margin-left: 12px;
+}
