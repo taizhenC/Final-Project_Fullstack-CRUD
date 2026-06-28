@@ -262,3 +262,29 @@ body {
 .unenroll-button {
   width: 100%;
 }
+
+.filter-bar {
+  max-width: 320px;
+  margin-bottom: 24px;
+}
+
+.filter-bar label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.filter-bar select {
+  border: 1px solid rgba(15, 118, 110, 0.24);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: inherit;
+  background: white;
+}
+
+.filter-bar select:focus {
+  outline: 2px solid rgba(20, 184, 166, 0.32);
+  border-color: #0f766e;
+}
