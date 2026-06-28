@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { campuses, students } from '@/data/mockData'
 import { Button } from '@/components/ui/button'
+import { useState } from 'react'
 import {
     Card,
     CardContent,
@@ -31,6 +32,10 @@ function StudentDetailPage() {
     }
 
     const campus = campuses.find((campus) => campus.id === student.campusId)
+
+    const [selectedCampusId, setSelectedCampusId] = useState(
+        student.campusId?.toString() ?? '',
+    )
 
     return (
         <div className="content-section">
@@ -78,6 +83,44 @@ function StudentDetailPage() {
                             'Not enrolled'
                         )}
                     </p>
+                </CardContent>
+            </Card>
+
+            <Card className="form-card">
+                <CardHeader>
+                    <CardDescription>Enrollment</CardDescription>
+                    <CardTitle>Change Campus</CardTitle>
+                </CardHeader>
+
+                <CardContent>
+                    <div className="app-form">
+                        <label>
+                            Campus
+                            <select
+                                value={selectedCampusId}
+                                onChange={(event) => setSelectedCampusId(event.target.value)}
+                            >
+                                <option value="">Not enrolled</option>
+                                {campuses.map((campus) => (
+                                    <option key={campus.id} value={campus.id}>
+                                        {campus.name}
+                                    </option>
+                                ))}
+                            </select>
+                        </label>
+
+                        <Button
+                            onClick={() => {
+                                console.log('Change student campus:', {
+                                    studentId: student.id,
+                                    campusId: selectedCampusId ? Number(selectedCampusId) : null,
+                                })
+                                alert('Change campus clicked. Backend connection will be added later.')
+                            }}
+                        >
+                            Save Campus Change
+                        </Button>
+                    </div>
                 </CardContent>
             </Card>
         </div>
