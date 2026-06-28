@@ -41,6 +41,10 @@ function CampusDetailPage() {
                 <Link to="/campuses">Back to Campuses</Link>
             </Button>
 
+            <Button asChild className="detail-action-button">
+                <Link to={`/campuses/${campus.id}/edit`}>Edit Campus</Link>
+            </Button>
+
             <Card className="detail-card">
                 <img src={campus.imageUrl} alt={campus.name} className="detail-image" />
 

@@ -7,6 +7,7 @@ import CampusDetailPage from '@/pages/CampusDetailPage'
 import StudentDetailPage from '@/pages/StudentDetailPage'
 import AddCampusPage from '@/pages/AddCampusPage'
 import AddStudentPage from '@/pages/AddStudentPage'
+import EditCampusPage from '@/pages/EditCampusPage'
 import './App.css'
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/campuses" element={<CampusesPage />} />
           <Route path="/campuses/:id" element={<CampusDetailPage />} />
           <Route path="/campuses/new" element={<AddCampusPage />} />
+          <Route path="/campuses/:id/edit" element={<EditCampusPage />} />
           <Route path="/students" element={<StudentsPage />} />
           <Route path="/students/:id" element={<StudentDetailPage />} />
           <Route path="/students/new" element={<AddStudentPage />} />
