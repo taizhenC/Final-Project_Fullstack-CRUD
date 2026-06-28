@@ -45,6 +45,17 @@ function CampusDetailPage() {
                 <Link to={`/campuses/${campus.id}/edit`}>Edit Campus</Link>
             </Button>
 
+            <Button
+                variant="destructive"
+                className="detail-action-button"
+                onClick={() => {
+                    console.log('Delete campus:', campus.id)
+                    alert('Delete campus clicked. Backend connection will be added later.')
+                }}
+            >
+                Delete Campus
+            </Button>
+
             <Card className="detail-card">
                 <img src={campus.imageUrl} alt={campus.name} className="detail-image" />
 

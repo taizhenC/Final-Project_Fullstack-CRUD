@@ -42,6 +42,17 @@ function StudentDetailPage() {
                 <Link to={`/students/${student.id}/edit`}>Edit Student</Link>
             </Button>
 
+            <Button
+                variant="destructive"
+                className="detail-action-button"
+                onClick={() => {
+                    console.log('Delete student:', student.id)
+                    alert('Delete student clicked. Backend connection will be added later.')
+                }}
+            >
+                Delete Student
+            </Button>
+
             <Card className="detail-card">
                 <CardHeader>
                     <CardDescription>Student Details</CardDescription>
