@@ -56,7 +56,7 @@ function EditStudentPage() {
         }
 
         const updatedStudent = {
-            id: student.id,
+            id: studentId,
             firstName: firstName.trim(),
             lastName: lastName.trim(),
             email: email.trim(),
