@@ -20,7 +20,6 @@ function EditStudentPage() {
     const [firstName, setFirstName] = useState(student?.firstName ?? '')
     const [lastName, setLastName] = useState(student?.lastName ?? '')
     const [email, setEmail] = useState(student?.email ?? '')
-    const [imageUrl, setImageUrl] = useState(student?.imageUrl ?? '')
     const [gpa, setGpa] = useState(student?.gpa.toString() ?? '')
     const [campusId, setCampusId] = useState(student?.campusId?.toString() ?? '')
     const [errorMessage, setErrorMessage] = useState('')
@@ -57,11 +56,10 @@ function EditStudentPage() {
         }
 
         const updatedStudent = {
-            id: student.id,
+            id: studentId,
             firstName: firstName.trim(),
             lastName: lastName.trim(),
             email: email.trim(),
-            imageUrl: imageUrl.trim(),
             gpa: gpaNumber,
             campusId: campusId ? Number(campusId) : null,
         }
@@ -110,15 +108,6 @@ function EditStudentPage() {
                                 type="email"
                                 value={email}
                                 onChange={(event) => setEmail(event.target.value)}
-                            />
-                        </label>
-
-                        <label>
-                            Image URL
-                            <input
-                                type="text"
-                                value={imageUrl}
-                                onChange={(event) => setImageUrl(event.target.value)}
                             />
                         </label>
 

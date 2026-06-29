@@ -48,7 +48,7 @@ function EditCampusPage() {
         }
 
         const updatedCampus = {
-            id: campus.id,
+            id: campusId,
             name: name.trim(),
             address: address.trim(),
             imageUrl: imageUrl.trim(),
