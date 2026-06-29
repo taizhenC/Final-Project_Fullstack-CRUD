@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { campuses, students } from '@/data/mockData'
 import { Button } from '@/components/ui/button'
+import { useState } from 'react'
 import {
     Card,
     CardContent,
@@ -14,6 +15,10 @@ function StudentDetailPage() {
     const studentId = Number(id)
 
     const student = students.find((student) => student.id === studentId)
+
+    const [selectedCampusId, setSelectedCampusId] = useState(
+        student?.campusId?.toString() ?? '',
+    )
 
     if (!student) {
         return (
@@ -42,6 +47,17 @@ function StudentDetailPage() {
                 <Link to={`/students/${student.id}/edit`}>Edit Student</Link>
             </Button>
 
+            <Button
+                variant="destructive"
+                className="detail-action-button"
+                onClick={() => {
+                    console.log('Delete student:', student.id)
+                    alert('Delete student clicked. Backend connection will be added later.')
+                }}
+            >
+                Delete Student
+            </Button>
+
             <Card className="detail-card">
                 <CardHeader>
                     <CardDescription>Student Details</CardDescription>
@@ -67,6 +83,44 @@ function StudentDetailPage() {
                             'Not enrolled'
                         )}
                     </p>
+                </CardContent>
+            </Card>
+
+            <Card className="form-card">
+                <CardHeader>
+                    <CardDescription>Enrollment</CardDescription>
+                    <CardTitle>Change Campus</CardTitle>
+                </CardHeader>
+
+                <CardContent>
+                    <div className="app-form">
+                        <label>
+                            Campus
+                            <select
+                                value={selectedCampusId}
+                                onChange={(event) => setSelectedCampusId(event.target.value)}
+                            >
+                                <option value="">Not enrolled</option>
+                                {campuses.map((campus) => (
+                                    <option key={campus.id} value={campus.id}>
+                                        {campus.name}
+                                    </option>
+                                ))}
+                            </select>
+                        </label>
+
+                        <Button
+                            onClick={() => {
+                                console.log('Change student campus:', {
+                                    studentId: student.id,
+                                    campusId: selectedCampusId ? Number(selectedCampusId) : null,
+                                })
+                                alert('Change campus clicked. Backend connection will be added later.')
+                            }}
+                        >
+                            Save Campus Change
+                        </Button>
+                    </div>
                 </CardContent>
             </Card>
         </div>
