@@ -1,0 +1,11 @@
+node_modules
+dist
+.env
+*.local
+
+# Local throwaway SQLite DB from the temporary contract schema (see prisma/schema.prisma)
+*.db
+*.db-journal
+
+# Migrations are owned by the teammate's authoritative schema, not this API package
+prisma/migrations
