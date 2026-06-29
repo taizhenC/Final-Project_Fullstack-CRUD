@@ -288,3 +288,87 @@ body {
   outline: 2px solid rgba(20, 184, 166, 0.32);
   border-color: #0f766e;
 }
+
+.home-page {
+  min-height: calc(100vh - 96px);
+}
+
+.home-hero {
+  min-height: 620px;
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 4rem;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.32), transparent 28%),
+    linear-gradient(120deg, #14b8a6 0%, #2563eb 100%);
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.22);
+}
+
+.home-hero-content {
+  max-width: 720px;
+  color: white;
+  animation: homeSlideUp 0.8s ease-out both;
+}
+
+.home-eyebrow {
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.home-title {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 0.92;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+}
+
+.home-title span {
+  display: block;
+}
+
+.home-description {
+  max-width: 560px;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@keyframes homeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-secondary-button {
+  background: rgba(255, 255, 255, 0.92);
+  color: #0f766e;
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.home-secondary-button:hover {
+  background: white;
+  color: #0f766e;
+}
