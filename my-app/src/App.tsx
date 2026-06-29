@@ -15,8 +15,13 @@ function App() {
   return (
     <>
       <nav className="navbar">
-        <h1>Campuses & Students</h1>
-
+        <div className="navbar-brand">
+          <div className="brand-mark">CS</div>
+          <div>
+            <h1>Campuses & Students</h1>
+          </div>
+        </div>
+        
         <div className="nav-links">
           <NavLink to="/" end>
             Home
