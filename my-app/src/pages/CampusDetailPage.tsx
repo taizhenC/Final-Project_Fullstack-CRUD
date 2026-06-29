@@ -41,6 +41,21 @@ function CampusDetailPage() {
                 <Link to="/campuses">Back to Campuses</Link>
             </Button>
 
+            <Button asChild className="detail-action-button">
+                <Link to={`/campuses/${campus.id}/edit`}>Edit Campus</Link>
+            </Button>
+
+            <Button
+                variant="destructive"
+                className="detail-action-button"
+                onClick={() => {
+                    console.log('Delete campus:', campus.id)
+                    alert('Delete campus clicked. Backend connection will be added later.')
+                }}
+            >
+                Delete Campus
+            </Button>
+
             <Card className="detail-card">
                 <img src={campus.imageUrl} alt={campus.name} className="detail-image" />
 
@@ -59,18 +74,33 @@ function CampusDetailPage() {
                 <h2>Students at {campus.name}</h2>
             </div>
 
+
             {enrolledStudents.length > 0 ? (
                 <div className="card-grid">
                     {enrolledStudents.map((student) => (
-                        <StudentCard
-                            key={student.id}
-                            firstName={student.firstName}
-                            lastName={student.lastName}
-                            email={student.email}
-                            gpa={student.gpa}
-                            campusName={campus.name}
-                            id={student.id}
-                        />
+                        <div key={student.id} className="student-action-card">
+                            <StudentCard
+                                id={student.id}
+                                firstName={student.firstName}
+                                lastName={student.lastName}
+                                email={student.email}
+                                gpa={student.gpa}
+                                campusName={campus.name}
+                            />
+
+                            <Button
+                                variant="outline"
+                                className="card-button unenroll-button"
+                                onClick={() => {
+                                    console.log('Unenroll student:', student.id)
+                                    alert(
+                                        'Unenroll student clicked. Backend connection will be added later.',
+                                    )
+                                }}
+                            >
+                                Remove from Campus
+                            </Button>
+                        </div>
                     ))}
                 </div>
             ) : (
