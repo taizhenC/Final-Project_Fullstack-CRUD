@@ -32,9 +32,9 @@ function CampusCard({
                 <CardDescription>{address}</CardDescription>
             </CardHeader>
 
-            <CardContent>
+            <CardContent className="campus-card-content">
                 <p>{description}</p>
-                <Button asChild variant="outline">
+                <Button asChild variant="outline" className="campus-card-button">
                     <Link to={`/campuses/${id}`}>View Details</Link>
                 </Button>
             </CardContent>

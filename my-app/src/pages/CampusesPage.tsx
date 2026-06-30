@@ -21,7 +21,7 @@ function CampusesPage() {
             </div>
 
             <div className="page-actions">
-                <Button asChild>
+                <Button asChild className="add-campus-button">
                     <Link to="/campuses/new">Add Campus</Link>
                 </Button>
             </div>

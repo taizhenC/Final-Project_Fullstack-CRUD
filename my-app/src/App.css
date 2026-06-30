@@ -571,3 +571,36 @@ body {
     min-width: auto;
   }
 }
+
+.add-campus-button {
+  background: linear-gradient(135deg, #0f766e, #2563eb);
+  box-shadow: 0 12px 26px rgba(15, 118, 110, 0.18);
+}
+
+.add-campus-button:hover {
+  opacity: 0.92;
+}
+
+.campus-card-button {
+  margin-top: 1rem;
+}
+
+.campus-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.campus-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.campus-card-content p {
+  margin-bottom: 1.5rem;
+}
+
+.campus-card-button {
+  margin-top: auto;
+  align-self: flex-start;
+}
