@@ -37,24 +37,27 @@ function CampusDetailPage() {
 
     return (
         <section className="content-section">
-            <Button asChild variant="outline">
-                <Link to="/campuses">Back to Campuses</Link>
-            </Button>
+            <div className="detail-toolbar">
+                <Button asChild variant="outline">
+                    <Link to="/campuses">Back to Campuses</Link>
+                </Button>
 
-            <Button asChild className="detail-action-button">
-                <Link to={`/campuses/${campus.id}/edit`}>Edit Campus</Link>
-            </Button>
+                <div className="detail-action-button">
+                    <Button asChild>
+                        <Link to={`/campuses/${campus.id}/edit`}>Edit Campus</Link>
+                    </Button>
 
-            <Button
-                variant="destructive"
-                className="detail-action-button"
-                onClick={() => {
-                    console.log('Delete campus:', campus.id)
-                    alert('Delete campus clicked. Backend connection will be added later.')
-                }}
-            >
-                Delete Campus
-            </Button>
+                    <Button
+                        variant="destructive"
+                        onClick={() => {
+                            console.log('Delete campus:', campus.id)
+                            alert('Delete campus clicked. Backend connection will be added later.')
+                        }}
+                    >
+                        Delete Campus
+                    </Button>
+                </div>
+            </div>
 
             <Card className="detail-card">
                 <img src={campus.imageUrl} alt={campus.name} className="detail-image" />

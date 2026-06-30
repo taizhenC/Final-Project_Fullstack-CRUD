@@ -462,3 +462,33 @@ body {
     transform: translateY(0);
   }
 }
+
+.detail-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.detail-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.campus-detail-card {
+  border: 1px solid rgba(20, 184, 166, 0.18);
+  box-shadow: 0 20px 52px rgba(15, 118, 110, 0.12);
+}
+
+@media (max-width: 768px) {
+  .detail-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .detail-toolbar-actions {
+    flex-direction: column;
+  }
+}
