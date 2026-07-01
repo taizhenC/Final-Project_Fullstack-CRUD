@@ -639,3 +639,11 @@ body {
   color: #f8fafc;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
 }
+
+body:has(.dark-mode) {
+  background:
+    radial-gradient(circle at top left, rgba(20, 184, 166, 0.18), transparent 32%),
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.22), transparent 30%),
+    linear-gradient(135deg, #020617 0%, #0f172a 50%, #111827 100%);
+  color: #e5e7eb;
+}
