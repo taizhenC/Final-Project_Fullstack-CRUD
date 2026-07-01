@@ -642,22 +642,33 @@ body {
   padding: 0 1rem;
 }
 
-.detail-card h3 {
-  margin-top: 0.35rem;
+.campus-profile-text {
+  max-width: 720px;
+}
+
+.campus-profile-text {
+  max-width: 720px;
+}
+
+.campus-profile-text h2 {
+  margin: 0;
   color: #0f172a;
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  line-height: 1;
-  letter-spacing: -0.05em;
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
 }
 
-.detail-card [data-slot="card-description"] {
-  color: #0f766e;
-  font-weight: 800;
+.campus-profile-address {
+  margin: 0.45rem 0 0;
+  color: #64748b;
+  font-size: 0.98rem;
+  font-weight: 400;
 }
 
-.detail-card p {
-  max-width: 680px;
+.campus-profile-description {
+  margin: 1rem 0 0;
   color: #475569;
+  font-size: 1rem;
   line-height: 1.75;
 }
 

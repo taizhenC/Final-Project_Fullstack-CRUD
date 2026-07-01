@@ -2,13 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { campuses, students } from '@/data/mockData'
 import StudentCard from '@/components/StudentCard'
 import { Button } from '@/components/ui/button'
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from '@/components/ui/card'
+import { Card } from '@/components/ui/card'
 
 function CampusDetailPage() {
     const { id } = useParams()
@@ -65,14 +59,11 @@ function CampusDetailPage() {
                 </div>
 
                 <div className="detail-info-panel">
-                    <CardHeader>
-                        <CardDescription>{campus.address}</CardDescription>
-                        <CardTitle>{campus.name}</CardTitle>
-                    </CardHeader>
-
-                    <CardContent>
-                        <p>{campus.description}</p>
-                    </CardContent>
+                    <div className="campus-profile-text">
+                        <h2>{campus.name}</h2>
+                        <p className="campus-profile-address">{campus.address}</p>
+                        <p className="campus-profile-description">{campus.description}</p>
+                    </div>
                 </div>
             </Card>
 
