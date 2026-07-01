@@ -40,8 +40,26 @@ function App() {
             <NavLink to="/" end>
               Home
             </NavLink>
-            <NavLink to="/campuses">Campuses</NavLink>
-            <NavLink to="/students">Students</NavLink>
+
+            <div className="nav-dropdown">
+              <NavLink to="/campuses" className="nav-dropdown-trigger">
+                Campuses <span>▾</span>
+              </NavLink>
+
+              <div className="nav-dropdown-menu single-item-menu">
+                <NavLink to="/campuses/new">Add Campus</NavLink>
+              </div>
+            </div>
+
+            <div className="nav-dropdown">
+              <NavLink to="/students" className="nav-dropdown-trigger">
+                Students <span>▾</span>
+              </NavLink>
+
+              <div className="nav-dropdown-menu single-item-menu">
+                <NavLink to="/students/new">Add Student</NavLink>
+              </div>
+            </div>
           </div>
         </nav>
       </div>

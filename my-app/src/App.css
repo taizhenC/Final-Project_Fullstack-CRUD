@@ -77,8 +77,63 @@ body {
   font-size: 0.85rem;
 }
 
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: max-content;
+  padding: 0.35rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 12px 28px rgba(15, 118, 110, 0.14);
+  display: none;
+  z-index: 50;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover {
+  background: rgba(20, 184, 166, 0.12);
+  transform: none;
+}
+
+.nav-dropdown-menu a.active {
+  background: linear-gradient(135deg, #0f766e, #2563eb);
+  color: white;
+}
+
 .navbar-scrolled h1 {
   font-size: 1.15rem;
+}
+
+.single-item-menu {
+  min-width: max-content;
 }
 
 .navbar h1 {
@@ -461,4 +516,65 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@media (max-width: 700px) {
+  .nav-dropdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    margin-top: 0.5rem;
+    min-width: max-content;
+  }
+}
+
+.navbar-scrolled .nav-dropdown {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar-scrolled .nav-dropdown-menu {
+  position: static;
+  margin-top: 0.5rem;
+  min-width: max-content;
+}
+
+.navbar-scrolled .nav-dropdown {
+  position: relative;
+}
+
+.navbar-scrolled .nav-dropdown:hover .nav-dropdown-menu,
+.navbar-scrolled .nav-dropdown:focus-within .nav-dropdown-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-scrolled .nav-dropdown {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  margin-bottom: -0.75rem;
+}
+
+.navbar-scrolled .nav-dropdown-menu {
+  position: static;
+  margin-top: 0;
+  padding-top: 0.35rem;
+  min-width: max-content;
+  display: none;
+}
+
+.navbar-scrolled .nav-dropdown:hover .nav-dropdown-menu,
+.navbar-scrolled .nav-dropdown:focus-within .nav-dropdown-menu {
+  display: flex;
+  flex-direction: column;
 }
