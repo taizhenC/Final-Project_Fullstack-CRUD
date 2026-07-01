@@ -641,10 +641,6 @@ body {
   opacity: 0.92;
 }
 
-.campus-card-button {
-  margin-top: 1rem;
-}
-
 .campus-card {
   display: flex;
   flex-direction: column;
@@ -700,10 +696,6 @@ body {
 
 .detail-info-panel {
   padding: 0 1rem;
-}
-
-.campus-profile-text {
-  max-width: 720px;
 }
 
 .campus-profile-text {
