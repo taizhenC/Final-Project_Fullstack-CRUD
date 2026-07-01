@@ -39,24 +39,28 @@ function StudentDetailPage() {
 
     return (
         <div className="content-section">
-            <Button asChild variant="outline">
-                <Link to="/students">Back to Students</Link>
-            </Button>
+            <div className="detail-toolbar">
+                <Button asChild variant="outline" className="back-button">
+                    <Link to="/students">Back to Students</Link>
+                </Button>
 
-            <Button asChild className="detail-action-button">
-                <Link to={`/students/${student.id}/edit`}>Edit Student</Link>
-            </Button>
+                <div className="detail-toolbar-actions">
+                    <Button asChild className="edit-button">
+                        <Link to={`/students/${student.id}/edit`}>Edit Student</Link>
+                    </Button>
 
-            <Button
-                variant="destructive"
-                className="detail-action-button"
-                onClick={() => {
-                    console.log('Delete student:', student.id)
-                    alert('Delete student clicked. Backend connection will be added later.')
-                }}
-            >
-                Delete Student
-            </Button>
+                    <Button
+                        variant="destructive"
+                        className="delete-button"
+                        onClick={() => {
+                            console.log('Delete student:', student.id)
+                            alert('Delete student clicked. Backend connection will be added later.')
+                        }}
+                    >
+                        Delete Student
+                    </Button>
+                </div>
+            </div>
 
             <Card className="detail-card">
                 <CardHeader>
