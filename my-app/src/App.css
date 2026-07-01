@@ -647,3 +647,46 @@ body:has(.dark-mode) {
     linear-gradient(135deg, #020617 0%, #0f172a 50%, #111827 100%);
   color: #e5e7eb;
 }
+
+.dark-mode .campus-card,
+.dark-mode .student-card,
+.dark-mode .form-card {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(148, 163, 184, 0.18);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
+}
+
+.dark-mode .campus-card:hover,
+.dark-mode .student-card:hover {
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
+}
+
+.dark-mode .campus-card-image {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.dark-mode .campus-card p,
+.dark-mode .student-card p,
+.dark-mode .section-heading h2,
+.dark-mode .app-form label,
+.dark-mode .filter-bar label {
+  color: #e5e7eb;
+}
+
+.dark-mode .section-heading p {
+  color: #5eead4;
+}
+
+.dark-mode .app-form input,
+.dark-mode .app-form textarea,
+.dark-mode .app-form select,
+.dark-mode .filter-bar select {
+  background: rgba(15, 23, 42, 0.92);
+  border-color: rgba(94, 234, 212, 0.26);
+  color: #f8fafc;
+}
+
+.dark-mode .app-form input::placeholder,
+.dark-mode .app-form textarea::placeholder {
+  color: #94a3b8;
+}
