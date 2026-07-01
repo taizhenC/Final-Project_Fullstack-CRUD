@@ -567,3 +567,126 @@ body {
 .single-item-menu {
   min-width: max-content;
 }
+
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: white;
+  color: #0f172a;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(15, 118, 110, 0.16);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(15, 118, 110, 0.22);
+}
+
+.navbar-scrolled .theme-toggle {
+  align-self: center;
+  margin: 8px auto 0;
+}
+
+.dark-mode {
+  background:
+    radial-gradient(circle at top left, rgba(20, 184, 166, 0.18), transparent 32%),
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.22), transparent 30%),
+    linear-gradient(135deg, #020617 0%, #0f172a 50%, #111827 100%);
+  color: #e5e7eb;
+}
+
+.dark-mode .navbar {
+  background: rgba(15, 23, 42, 0.86);
+  border-color: rgba(148, 163, 184, 0.18);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28);
+}
+
+.dark-mode .navbar h1,
+.dark-mode .nav-links a,
+.dark-mode .nav-dropdown-trigger {
+  color: #ccfbf1;
+}
+
+.dark-mode .nav-links a:hover {
+  background: rgba(45, 212, 191, 0.12);
+}
+
+.dark-mode .nav-links a.active {
+  background: linear-gradient(135deg, #14b8a6, #2563eb);
+  color: white;
+}
+
+.dark-mode .nav-dropdown-menu {
+  background: rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.dark-mode .nav-dropdown-menu a {
+  color: #ccfbf1;
+}
+
+.dark-mode .theme-toggle {
+  background: #1e293b;
+  color: #f8fafc;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+body:has(.dark-mode) {
+  background:
+    radial-gradient(circle at top left, rgba(20, 184, 166, 0.18), transparent 32%),
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.22), transparent 30%),
+    linear-gradient(135deg, #020617 0%, #0f172a 50%, #111827 100%);
+  color: #e5e7eb;
+}
+
+.dark-mode .campus-card,
+.dark-mode .student-card,
+.dark-mode .form-card {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(148, 163, 184, 0.18);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
+}
+
+.dark-mode .campus-card:hover,
+.dark-mode .student-card:hover {
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
+}
+
+.dark-mode .campus-card-image {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.dark-mode .campus-card p,
+.dark-mode .student-card p,
+.dark-mode .section-heading h2,
+.dark-mode .app-form label,
+.dark-mode .filter-bar label {
+  color: #e5e7eb;
+}
+
+.dark-mode .section-heading p {
+  color: #5eead4;
+}
+
+.dark-mode .app-form input,
+.dark-mode .app-form textarea,
+.dark-mode .app-form select,
+.dark-mode .filter-bar select {
+  background: rgba(15, 23, 42, 0.92);
+  border-color: rgba(94, 234, 212, 0.26);
+  color: #f8fafc;
+}
+
+.dark-mode .app-form input::placeholder,
+.dark-mode .app-form textarea::placeholder {
+  color: #94a3b8;
+}
