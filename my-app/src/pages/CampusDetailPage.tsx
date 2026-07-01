@@ -59,17 +59,21 @@ function CampusDetailPage() {
                 </div>
             </div>
 
-            <Card className="detail-card">
-                <img src={campus.imageUrl} alt={campus.name} className="detail-image" />
+            <Card className="detail-card campus-detail-card">
+                <div className="detail-logo-panel">
+                    <img src={campus.imageUrl} alt={campus.name} className="detail-image" />
+                </div>
 
-                <CardHeader>
-                    <CardDescription>{campus.address}</CardDescription>
-                    <CardTitle>{campus.name}</CardTitle>
-                </CardHeader>
+                <div className="detail-info-panel">
+                    <CardHeader>
+                        <CardDescription>{campus.address}</CardDescription>
+                        <CardTitle>{campus.name}</CardTitle>
+                    </CardHeader>
 
-                <CardContent>
-                    <p>{campus.description}</p>
-                </CardContent>
+                    <CardContent>
+                        <p>{campus.description}</p>
+                    </CardContent>
+                </div>
             </Card>
 
             <div className="section-heading">

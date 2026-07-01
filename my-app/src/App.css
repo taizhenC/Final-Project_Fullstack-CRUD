@@ -604,3 +604,68 @@ body {
   margin-top: auto;
   align-self: flex-start;
 }
+
+.detail-card {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto 2rem;
+  padding: 1.25rem;
+  overflow: hidden;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.detail-logo-panel {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top left, rgba(20, 184, 166, 0.14), transparent 32%),
+    linear-gradient(135deg, rgba(240, 253, 250, 0.96), rgba(239, 246, 255, 0.96));
+}
+
+.detail-image {
+  width: 100%;
+  max-height: 145px;
+  object-fit: contain;
+  display: block;
+  padding: 1rem;
+  background: transparent;
+}
+
+.detail-info-panel {
+  padding: 0 1rem;
+}
+
+.detail-card h3 {
+  margin-top: 0.35rem;
+  color: #0f172a;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.detail-card [data-slot="card-description"] {
+  color: #0f766e;
+  font-weight: 800;
+}
+
+.detail-card p {
+  max-width: 680px;
+  color: #475569;
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .detail-card {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-info-panel {
+    padding: 0;
+  }
+}
