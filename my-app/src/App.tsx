@@ -10,10 +10,12 @@ import AddCampusPage from '@/pages/AddCampusPage'
 import AddStudentPage from '@/pages/AddStudentPage'
 import EditCampusPage from '@/pages/EditCampusPage'
 import EditStudentPage from '@/pages/EditStudentPage'
+import { useThemeStore } from '@/stores/themeStore'
 import './App.css'
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const { theme, toggleTheme } = useThemeStore()
   useEffect(() => {
     function handleScroll() {
       setIsScrolled(window.scrollY > 24)
@@ -26,7 +28,7 @@ function App() {
   }, [])
 
   return (
-    <>
+    <div className={`theme-shell ${theme === 'dark' ? 'dark-mode' : ''}`}>
       <div className="navbar-space">
         <nav className={isScrolled ? 'navbar navbar-scrolled' : 'navbar'}>
           <div className="navbar-brand">
@@ -60,6 +62,16 @@ function App() {
                 <NavLink to="/students/new">Add Student</NavLink>
               </div>
             </div>
+
+            <button
+              type="button"
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label="Toggle dark mode"
+            >
+              {theme === 'dark' ? '☀️' : '🌙'}
+            </button>
+            
           </div>
         </nav>
       </div>
@@ -79,7 +91,7 @@ function App() {
 
         </Routes>
       </main >
-    </>
+    </div>
   )
 }
 
