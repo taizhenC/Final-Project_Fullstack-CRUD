@@ -590,3 +590,52 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 14px 28px rgba(15, 118, 110, 0.22);
 }
+
+.navbar-scrolled .theme-toggle {
+  align-self: center;
+  margin: 8px auto 0;
+}
+
+.dark-mode {
+  background:
+    radial-gradient(circle at top left, rgba(20, 184, 166, 0.18), transparent 32%),
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.22), transparent 30%),
+    linear-gradient(135deg, #020617 0%, #0f172a 50%, #111827 100%);
+  color: #e5e7eb;
+}
+
+.dark-mode .navbar {
+  background: rgba(15, 23, 42, 0.86);
+  border-color: rgba(148, 163, 184, 0.18);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28);
+}
+
+.dark-mode .navbar h1,
+.dark-mode .nav-links a,
+.dark-mode .nav-dropdown-trigger {
+  color: #ccfbf1;
+}
+
+.dark-mode .nav-links a:hover {
+  background: rgba(45, 212, 191, 0.12);
+}
+
+.dark-mode .nav-links a.active {
+  background: linear-gradient(135deg, #14b8a6, #2563eb);
+  color: white;
+}
+
+.dark-mode .nav-dropdown-menu {
+  background: rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.dark-mode .nav-dropdown-menu a {
+  color: #ccfbf1;
+}
+
+.dark-mode .theme-toggle {
+  background: #1e293b;
+  color: #f8fafc;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
