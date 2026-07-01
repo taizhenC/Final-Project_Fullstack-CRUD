@@ -62,14 +62,15 @@ function StudentsPage() {
             </div>
 
             <div className="page-actions">
-                <Button asChild>
+                <Button asChild className="add-campus-button">
                     <Link to="/students/new">Add Student</Link>
                 </Button>
             </div>
 
-            <div className="filter-bar">
+            <div className="student-filter-panel">
                 <label>
-                    Filter by campus
+                    <span className="filter-kicker">Primary filter</span>
+                    <span className="filter-title">Campus filter</span>
                     <select
                         value={selectedCampusId}
                         onChange={(event) => setSelectedCampusId(event.target.value)}
