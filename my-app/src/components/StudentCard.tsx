@@ -37,7 +37,7 @@ function StudentCard({
             <CardContent>
                 <p>GPA: {gpa}</p>
                 <p>Campus: {campusName ?? 'Not enrolled'}</p>
-                <Button asChild variant="outline" className="card-button">
+                <Button asChild variant="outline" className="student-card-button">
                     <Link to={`/students/${id}`}>View Details</Link>
                 </Button>
             </CardContent>

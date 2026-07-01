@@ -6,13 +6,22 @@ import { Button } from '@/components/ui/button'
 function CampusesPage() {
     return (
         <section className="content-section">
-            <div className="section-heading">
-                <p>Campuses</p>
-                <h2>Campus directory</h2>
+            <div className="directory-header">
+                <div>
+                    <h2>Campus Directory</h2>
+                    <p className="directory-description">
+                        Explore campus profiles, addresses, and enrollment details across all schools.
+                    </p>
+                </div>
+
+                <div className="directory-summary">
+                    <span>{campuses.length}</span>
+                    <p>Campuses Available</p>
+                </div>
             </div>
 
             <div className="page-actions">
-                <Button asChild>
+                <Button asChild className="add-campus-button">
                     <Link to="/campuses/new">Add Campus</Link>
                 </Button>
             </div>

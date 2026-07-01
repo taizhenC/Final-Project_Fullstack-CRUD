@@ -3,9 +3,11 @@ import { campuses, students } from '@/data/mockData'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { useStudentFilterStore } from '@/stores/studentFilterStore'
+import { useState } from 'react'
 
 function StudentsPage() {
     const { selectedCampusId, setSelectedCampusId } = useStudentFilterStore()
+    const [sortOption, setSortOption] = useState('lastName')
 
     const filteredStudents = students.filter((student) => {
         if (selectedCampusId === 'all') {
@@ -19,22 +21,56 @@ function StudentsPage() {
         return student.campusId === Number(selectedCampusId)
     })
 
+    const sortedStudents = [...filteredStudents].sort((a, b) => {
+        if (sortOption === 'firstName') {
+            return a.firstName.localeCompare(b.firstName)
+        }
+
+        if (sortOption === 'gpaHigh') {
+            return b.gpa - a.gpa
+        }
+
+        if (sortOption === 'gpaLow') {
+            return a.gpa - b.gpa
+        }
+
+        return a.lastName.localeCompare(b.lastName)
+    })
+
+    const selectedCampusName =
+        selectedCampusId === 'all'
+            ? 'All campuses'
+            : selectedCampusId === 'none'
+                ? 'Not enrolled'
+                : campuses.find((campus) => campus.id === Number(selectedCampusId))?.name
+
     return (
         <section className="content-section">
-            <div className="section-heading">
-                <p>Students</p>
-                <h2>Student directory</h2>
+            <div className="directory-header">
+                <div>
+                    <h2>Student Directory</h2>
+                    <p className="directory-description">
+                        Browse student profiles, filter by campus, and sort the roster.
+                    </p>
+                </div>
+
+                <div className="directory-summary">
+                    <p>Filtered Students </p>
+                    <span>{sortedStudents.length}</span>
+                    <p>{selectedCampusName}</p>
+                </div>
             </div>
 
             <div className="page-actions">
-                <Button asChild>
+                <Button asChild className="add-campus-button">
                     <Link to="/students/new">Add Student</Link>
                 </Button>
             </div>
 
-            <div className="filter-bar">
+            <div className="student-filter-panel">
                 <label>
-                    Filter by campus
+                    <span className="filter-kicker">Primary filter</span>
+                    <span className="filter-title">Campus filter</span>
                     <select
                         value={selectedCampusId}
                         onChange={(event) => setSelectedCampusId(event.target.value)}
@@ -48,11 +84,25 @@ function StudentsPage() {
                         ))}
                     </select>
                 </label>
+
+                <label>
+                    <span className="filter-kicker">Secondary filter</span>
+                    <span className="filter-title">Sort students</span>
+                    <select
+                        value={sortOption}
+                        onChange={(event) => setSortOption(event.target.value)}
+                    >
+                        <option value="lastName">Last name A-Z</option>
+                        <option value="firstName">First name A-Z</option>
+                        <option value="gpaHigh">Highest GPA first</option>
+                        <option value="gpaLow">Lowest GPA first</option>
+                    </select>
+                </label>
             </div>
 
-            {filteredStudents.length > 0 ? (
+            {sortedStudents.length > 0 ? (
                 <div className="card-grid">
-                    {filteredStudents.map((student) => {
+                    {sortedStudents.map((student) => {
                         const campus = campuses.find((campus) => campus.id === student.campusId)
 
                         return (

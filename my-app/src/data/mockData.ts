@@ -8,6 +8,8 @@ export const campuses = [
     name: 'Hunter College',
     address: '695 Park Ave, New York, NY',
     imageUrl: hunterImage,
+    primaryColor: '#4B2E83',
+    secondaryColor: '#F3C300',
     description:
       'Hunter College is a public university in New York City, United States. It is one of the constituent colleges of the City University of New York, and offers studies in more than one hundred undergraduate and postgraduate fields across five schools.',
   },
@@ -16,6 +18,8 @@ export const campuses = [
     name: 'Brooklyn College',
     address: '2900 Bedford Ave, Brooklyn, NY',
     imageUrl: brooklynImage,
+    primaryColor: '#8A1538',
+    secondaryColor: '#F2C75C',
     description:
       'Brooklyn College is a public university in Brooklyn in New York City, New York. It is part of the City University of New York system and enrolled nearly 14,000 students on a 35-acre campus in the Midwood and Flatbush sections of Brooklyn as of fall 2023.',
   },
@@ -24,6 +28,8 @@ export const campuses = [
     name: 'Queens College',
     address: '65-30 Kissena Blvd, Queens, NY',
     imageUrl: queensImage,
+    primaryColor: '#0057B8',
+    secondaryColor: '#C99700',
     description:
       'Queens College is a public college in the New York City borough of Queens. Part of the City University of New York system, Queens College occupies an 83-acre campus primarily located in Flushing.',
   },

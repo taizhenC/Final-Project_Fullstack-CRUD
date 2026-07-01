@@ -2,13 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { campuses, students } from '@/data/mockData'
 import StudentCard from '@/components/StudentCard'
 import { Button } from '@/components/ui/button'
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from '@/components/ui/card'
+import { Card } from '@/components/ui/card'
 
 function CampusDetailPage() {
     const { id } = useParams()
@@ -37,39 +31,44 @@ function CampusDetailPage() {
 
     return (
         <section className="content-section">
-            <Button asChild variant="outline">
-                <Link to="/campuses">Back to Campuses</Link>
-            </Button>
+            <div className="detail-toolbar">
+                <Button asChild variant="outline" className="back-button">
+                    <Link to="/campuses">Back to Campuses</Link>
+                </Button>
 
-            <Button asChild className="detail-action-button">
-                <Link to={`/campuses/${campus.id}/edit`}>Edit Campus</Link>
-            </Button>
+                <div className="detail-toolbar-actions">
+                    <Button asChild className="edit-button">
+                        <Link to={`/campuses/${campus.id}/edit`}>Edit Campus</Link>
+                    </Button>
 
-            <Button
-                variant="destructive"
-                className="detail-action-button"
-                onClick={() => {
-                    console.log('Delete campus:', campus.id)
-                    alert('Delete campus clicked. Backend connection will be added later.')
-                }}
-            >
-                Delete Campus
-            </Button>
+                    <Button
+                        variant="destructive"
+                        className="delete-button"
+                        onClick={() => {
+                            console.log('Delete campus:', campus.id)
+                            alert('Delete campus clicked. Backend connection will be added later.')
+                        }}
+                    >
+                        Delete Campus
+                    </Button>
+                </div>
+            </div>
 
-            <Card className="detail-card">
-                <img src={campus.imageUrl} alt={campus.name} className="detail-image" />
+            <Card className="detail-card campus-detail-card">
+                <div className="detail-logo-panel">
+                    <img src={campus.imageUrl} alt={campus.name} className="detail-image" />
+                </div>
 
-                <CardHeader>
-                    <CardDescription>{campus.address}</CardDescription>
-                    <CardTitle>{campus.name}</CardTitle>
-                </CardHeader>
-
-                <CardContent>
-                    <p>{campus.description}</p>
-                </CardContent>
+                <div className="detail-info-panel">
+                    <div className="campus-profile-text">
+                        <h2>{campus.name}</h2>
+                        <p className="campus-profile-address">{campus.address}</p>
+                        <p className="campus-profile-description">{campus.description}</p>
+                    </div>
+                </div>
             </Card>
 
-            <div className="section-heading">
+            <div className="enrollment-heading">
                 <p>Enrolled Students</p>
                 <h2>Students at {campus.name}</h2>
             </div>
