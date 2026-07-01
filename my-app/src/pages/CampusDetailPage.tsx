@@ -68,7 +68,7 @@ function CampusDetailPage() {
                 </div>
             </Card>
 
-            <div className="section-heading">
+            <div className="enrollment-heading">
                 <p>Enrolled Students</p>
                 <h2>Students at {campus.name}</h2>
             </div>

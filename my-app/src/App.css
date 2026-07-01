@@ -741,3 +741,34 @@ body {
     padding: 0;
   }
 }
+
+.enrollment-heading {
+  margin: 2.5rem 0 1.5rem;
+}
+
+.enrollment-heading p {
+  width: fit-content;
+  margin: 0 0 0.75rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    rgba(20, 184, 166, 0.14),
+    rgba(37, 99, 235, 0.14)
+  );
+  color: #0f766e;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.enrollment-heading h2 {
+  margin: 0;
+  background: linear-gradient(135deg, #0f766e, #2563eb);
+  background-clip: text;
+  color: transparent;
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
