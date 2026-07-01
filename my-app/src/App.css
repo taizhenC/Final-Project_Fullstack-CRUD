@@ -629,8 +629,9 @@ body {
 }
 
 .detail-image {
-  width: 100%;
-  max-height: 145px;
+  width: auto;
+  max-width: 105%;
+  max-height: 200px;
   object-fit: contain;
   display: block;
   padding: 1rem;
