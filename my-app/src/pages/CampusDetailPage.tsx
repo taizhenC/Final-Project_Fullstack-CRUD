@@ -32,17 +32,18 @@ function CampusDetailPage() {
     return (
         <section className="content-section">
             <div className="detail-toolbar">
-                <Button asChild variant="outline">
+                <Button asChild variant="outline" className="back-button">
                     <Link to="/campuses">Back to Campuses</Link>
                 </Button>
 
-                <div className="detail-action-button">
-                    <Button asChild>
+                <div className="detail-toolbar-actions">
+                    <Button asChild className="edit-button">
                         <Link to={`/campuses/${campus.id}/edit`}>Edit Campus</Link>
                     </Button>
 
                     <Button
                         variant="destructive"
+                        className="delete-button"
                         onClick={() => {
                             console.log('Delete campus:', campus.id)
                             alert('Delete campus clicked. Backend connection will be added later.')
