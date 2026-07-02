@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { NavLink, Route, Routes } from 'react-router-dom'
 import HomePage from '@/pages/HomePage'
 import CampusesPage from '@/pages/CampusesPage'
@@ -12,19 +13,36 @@ import EditStudentPage from '@/pages/EditStudentPage'
 import './App.css'
 
 function App() {
+  const [isScrolled, setIsScrolled] = useState(false)
+  useEffect(() => {
+    function handleScroll() {
+      setIsScrolled(window.scrollY > 24)
+    }
+    handleScroll()
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <>
-      <nav className="navbar">
-        <h1>Campuses & Students</h1>
+      <div className="navbar-space">
+        <nav className={isScrolled ? 'navbar navbar-scrolled' : 'navbar'}>
+          <div className="navbar-brand">
+            <div className="brand-mark">CS</div>
+            <p className="navbar-title">Campuses & Students</p>
+          </div>
 
-        <div className="nav-links">
-          <NavLink to="/" end>
-            Home
-          </NavLink>
-          <NavLink to="/campuses">Campuses</NavLink>
-          <NavLink to="/students">Students</NavLink>
-        </div>
-      </nav>
+          <div className="nav-links">
+            <NavLink to="/" end>
+              Home
+            </NavLink>
+            <NavLink to="/campuses">Campuses</NavLink>
+            <NavLink to="/students">Students</NavLink>
+          </div>
+        </nav>
+      </div>
 
       <main className="app">
         <Routes>
