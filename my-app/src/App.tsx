@@ -41,20 +41,20 @@ function App() {
 
             <div className="nav-dropdown">
               <NavLink to="/campuses" className="nav-dropdown-trigger">
-                Campuses <span>▾</span>
+                Campuses <span aria-hidden="true">▾</span>
               </NavLink>
 
-              <div className="nav-dropdown-menu single-item-menu">
+              <div className="nav-dropdown-menu">
                 <NavLink to="/campuses/new">Add Campus</NavLink>
               </div>
             </div>
 
             <div className="nav-dropdown">
               <NavLink to="/students" className="nav-dropdown-trigger">
-                Students <span>▾</span>
+                Students <span aria-hidden="true">▾</span>
               </NavLink>
 
-              <div className="nav-dropdown-menu single-item-menu">
+              <div className="nav-dropdown-menu">
                 <NavLink to="/students/new">Add Student</NavLink>
               </div>
             </div>
