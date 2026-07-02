@@ -31,9 +31,7 @@ function App() {
         <nav className={isScrolled ? 'navbar navbar-scrolled' : 'navbar'}>
           <div className="navbar-brand">
             <div className="brand-mark">CS</div>
-            <div>
-              <h1>Campuses & Students</h1>
-            </div>
+            <p className="navbar-title">Campuses & Students</p>
           </div>
 
           <div className="nav-links">
