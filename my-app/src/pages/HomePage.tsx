@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function HomePage() {
     return (
-        <main className="home-page">
+        <section className="home-page">
             <div className="home-hero">
                 <div className="home-hero-content">
                     <p className="home-eyebrow">Campus & Student Management</p>
@@ -27,7 +27,7 @@ function HomePage() {
                     </div>
                 </div>
             </div>
-        </main>
+        </section>
     )
 }
 
